@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-regular fa-compass"></i>
+    </a>
+    <div class="navbar-nav">
+      <a class="nav-link" href="/listings">Explore</a>
+    </div>
+    <button class="navbar-toggler d-md-none"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <!-- Desktop Search -->
+    <form class="d-none d-lg-flex mx-auto search-form " method="GET" action="/listings">
+      <input class="form-control me-2"
+             type="search"
+             placeholder="Search destination,cities and stay"
+             name="place"
+             value="<%=search %>">
+
+      <button class="btn btn-outline-danger search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+
+    <!-- Desktop Links -->
+    <div class="navbar-nav ms-auto d-none d-lg-flex">
+      <a class="nav-link" href="/listings/new">Airbnb your home</a>
+
+      <% if(currUser){ %>
+        <a class="nav-link" href="/logout"><b>Logout</b></a>
+      <% } else { %>
+        <a class="nav-link" href="/register"><b>SignUp</b></a>
+        <a class="nav-link" href="/login"><b>Login</b></a>
+      <% } %>
+    </div>
+
+  </div>
+  
+</nav>
+<div class="offcanvas offcanvas-end"
+     id="offcanvasNavbar">
+
+    <div class="offcanvas-header">
+        <h5>Menu</h5>
+
+        <button class="btn-close"
+                data-bs-dismiss="offcanvas">
+        </button>
+    </div>
+
+    <div class="offcanvas-body">
+
+        <form class="d-flex mb-3"
+              method="GET"
+              action="/listings">
+
+            <input class="form-control me-2"
+                   type="search"
+                   name="place"
+                   placeholder="Search..."
+                   value="<%= search %>">
+
+            <button class="btn btn-outline-danger">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button> 
+
+        </form>
+
+        <div class="navbar-nav">
+
+            <a class="nav-link" href="/listings">Explore</a>
+
+            <a class="nav-link" href="/listings/new">
+                Airbnb your home
+            </a>
+
+            <% if(currUser){ %>
+
+                <a class="nav-link" href="/logout">
+                   <b>Logout</b> 
+                </a>
+
+            <% } else { %>
+
+                <a class="nav-link" href="/register">
+                    <b>SignUp</b>
+                </a>
+
+                <a class="nav-link" href="/login">
+                    <b>Login</b>
+                </a>
+
+            <% } %>
+
+        </div>
+
+    </div>
+
+</div>

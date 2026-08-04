@@ -1,0 +1,68 @@
+<% layout("layouts/boilerplate.ejs") -%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+         <br>
+         <h3>edit your listing</h3>
+       <form action="/listings/<%=reqList._id%>?_method=PATCH" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listData[title]" placeholder="enter title" value="<%=reqList.title%>" class="form-control" required>
+            <div class="invalid-feedback">
+              Please provide a title.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listData[description]" placeholder="enter description" class="form-control" rows="10" cols="30" required><%= reqList.description %></textarea>
+            <div class="invalid-feedback">
+              Please provide a description.
+            </div>
+        </div>
+        <div class="mb-3">
+          <label for="image">Original image</label>
+          <br>
+          <img src="<%= originalUrl %>" alt="listing-image" height="200px" id="image">
+        </div>
+        
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload New Image</label>
+            <input type="file" name="listData[image]" class="form-control">
+        </div>
+        <div class="row">
+         <div class="col-md-4">
+            <div class="mb-3">
+             <label for="price" class="form-label">Price</label>
+             <input type="number" name="listData[price]" placeholder="enter price" value="<%=reqList.price%>" class="form-control" required>
+             <div class="invalid-feedback">
+               Please provide a valid price.
+             </div>
+            </div>
+         </div>
+         <div class="col-md-8">
+            <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="listData[country]" placeholder="enter country" value="<%=reqList.country%>" class="form-control" required>
+            <div class="invalid-feedback">
+              Please provide a valid country.
+            </div>
+            </div>
+         </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="listData[location]" placeholder="enter location" value="<%=reqList.location%>" class="form-control" required>
+            <div class="invalid-feedback">
+              Please provide a valid location.
+            </div>
+        </div>
+
+        <button class="btn btn-dark edit-btn">Edit</button>
+        <br> <br>
+        </form>
+        </div>
+    </div>
+
+</body>

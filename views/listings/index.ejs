@@ -1,0 +1,81 @@
+<% layout("layouts/boilerplate.ejs") -%>
+<body>
+    <div class="filters">
+        <div class="filter">
+            <a href="/listings?category=Trending">
+              <i class="fa-solid fa-fire"></i>
+              <p>Trending</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings?category=Rooms">
+              <i class="fa-solid fa-bed"></i>
+              <p>Rooms</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings?category=Iconic+Cities">
+             <i class="fa-solid fa-mountain-city"></i>
+             <p>Iconic Cities</p>
+            </a>
+        </div>
+        <div class="filter">           
+            <a href="/listings?category=Mountains">
+              <i class="fa-solid fa-mountain"></i>
+              <p>Mountains</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings?category=Castles">
+              <i class="fa-brands fa-fort-awesome"></i>
+              <p>Castles</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings?category=Amazing+Pools">
+              <i class="fa-solid fa-person-swimming"></i>
+              <p>Amazing Pools</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings?category=Camping">
+              <i class="fa-solid fa-campground"></i>
+              <p>Camping</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings?category=Farms">
+              <i class="fa-solid fa-cow"></i>
+              <p>Farms</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings?category=Arctic">
+                <i class="fa-regular fa-snowflake"></i>
+                <p>Arctic</p>
+            </a>
+        </div>
+    </div>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+        <% if(allListings.length==0){ %>
+           <h3 class="offset-5 mt-5" style="color:#fe424d">No listings found!</h3>
+        <% } else {%>
+        <% for(let listing of allListings){ %>
+          <a href="/listings/<%= listing._id %>" class="listing-link">
+            <div class="card col listing-card">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="listing-image" style="height: 20rem;">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <b><%= listing.title %></b>
+                        <br>
+                        &#8377;<%= listing.price?listing.price.toLocaleString("en-in"):""%>/night                        
+                    </p>
+                </div>
+            </div>
+           </a>
+
+        <% } %>
+        <% } %>
+    </div>
+</body>
