@@ -92,8 +92,9 @@
     <script>
         let lat="<%=reqList.coordinates[0]%>";
         let lng="<%=reqList.coordinates[1]%>";
-        let title="<%=reqList.title%>"
+        let title="<%=reqList.title%>";
+        let loc="<%=reqList.location%>";
+        console.log(lat,lng,title,loc);
     </script>
-
-    <script src="/js/map.js"></script>
+     <script src="/js/map.js"></script>
 </body>

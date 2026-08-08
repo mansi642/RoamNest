@@ -20,7 +20,7 @@
              type="search"
              placeholder="Search destination,cities and stay"
              name="place"
-             value="<%=search %>">
+             value="<%= typeof search !== 'undefined' ? search : '' %>"
 
       <button class="btn btn-outline-danger search-btn">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -63,7 +63,7 @@
                    type="search"
                    name="place"
                    placeholder="Search..."
-                   value="<%= search %>">
+                   value="<%= typeof search !== 'undefined' ? search : '' %>">
 
             <button class="btn btn-outline-danger">
                 <i class="fa-solid fa-magnifying-glass"></i>

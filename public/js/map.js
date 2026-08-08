@@ -21,4 +21,4 @@ const redIcon = L.icon({
 
 L.marker([lat, lng], { icon: redIcon })
     .addTo(map)
-    .bindPopup(title);
+    .bindPopup(`<b>${title}</b><br>${loc}`);
