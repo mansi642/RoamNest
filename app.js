@@ -73,6 +73,9 @@ app.use((req,res,next)=>{
     res.locals.search=req.query.place || "";
     next();
 });
+app.get("/",(req,res)=>{
+    res.redirect("/listings");
+});
 app.use("/listings",listingsRoute);
 app.use("/listings/:id/reviews",reviewsRoute);
 app.use("/",userRoute);
