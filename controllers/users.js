@@ -13,7 +13,7 @@ module.exports.signUp=async(req,res)=>{
             if(err){
                 next(err);
             }else{
-                req.flash("success","Welcome to Wanderlust");
+                req.flash("success","Welcome to RoamNest");
                 res.redirect("/listings");
             }
         });
@@ -26,7 +26,7 @@ module.exports.loginForm=(req,res)=>{
    res.render("users/login.ejs");
 };
 module.exports.login=async(req,res)=>{
-    req.flash("success","Welcome Back To Wanderlust");
+    req.flash("success","Welcome Back To RoamNest");
     let redirectURL=res.locals.redirectURL || "/listings";
     res.redirect(redirectURL);
 };
