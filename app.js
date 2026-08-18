@@ -76,6 +76,12 @@ app.use((req,res,next)=>{
 app.get("/",(req,res)=>{
     res.redirect("/listings");
 });
+app.get("/privacy",(req,res)=>{
+    res.render("listings/privacy.ejs");
+});
+app.get("/terms",(req,res)=>{
+    res.render("listings/terms.ejs");
+});
 app.use("/listings",listingsRoute);
 app.use("/listings/:id/reviews",reviewsRoute);
 app.use("/",userRoute);
