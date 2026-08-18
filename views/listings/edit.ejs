@@ -58,7 +58,22 @@
               Please provide a valid location.
             </div>
         </div>
-
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <select id="category" class="form-select" name="listData[category]" required>
+          <option value="" selected><%= reqList.category || "Choose..." %></option>
+      <option>Mountains</option>
+      <option>Iconic Cities</option>
+      <option>Castles</option>
+      <option>Amazing Pools</option>
+      <option>Beach</option>
+      <option>Arctic</option>
+      <option>Farms</option>
+    </select>
+    <div class="invalid-feedback">
+        Please provide valid category!
+    </div>
+    </div>
         <button class="btn btn-dark edit-btn">Edit</button>
         <br> <br>
         </form>
